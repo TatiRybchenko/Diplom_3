@@ -70,8 +70,6 @@ public class RegisterUserTest {
         pageRegister.clickRegisterButton();
         pageRegister.checkTextErrorMessageInputPassword();
 
-        pageLoginPersonalAccount.isWindowOrderIsProcessedDisplayed();
-
         assertFalse("Сообщение, что пароль некорректный не сработало, выполнен переход на экранную форму Входа", pageLoginPersonalAccount.isWindowOrderIsProcessedDisplayed());
     }
 }

@@ -13,22 +13,17 @@ public class HomePage {
     //локатор кнопки "Личный Кабинет" вверх страницы
     @FindBy(how = How.XPATH, using = ".//p[contains(text(),'Личный Кабинет')]")
     private SelenideElement personalAccountUpButton;
-
     //локатор кнопки "Войти в акаунт" внизу страницы
     @FindBy(how = How.XPATH, using = ".//button[contains(text(),'Войти в аккаунт')]")
     private SelenideElement loginAccountDownButton;
 
-
     @Step("Нажимаем на кнопку Личный кабинет, вверх страницы")
-    //метод клика по кнопке Личный кабинет вверх страницы
     public void clickPersonalAccountUpButton() {
         personalAccountUpButton.click();
     }
 
     @Step("Нажимаем на кнопку Войти в акаунт, внизу страницы")
-    //метод клика по кнопке Войти в акаунт внизу страницы
     public void clickLoginAccountDownButton() {
         loginAccountDownButton.click();
     }
-
 }
