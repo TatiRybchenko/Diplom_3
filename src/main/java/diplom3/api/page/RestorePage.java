@@ -1,11 +1,11 @@
-package page;
+package diplom3.api.page;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class RestoreHome {
+public class RestorePage {
 
     //локатор кнопки "Войти"
     @FindBy(how = How.XPATH, using = ".//a[contains(text(),'Войти')]")

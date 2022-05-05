@@ -1,4 +1,4 @@
-package page;
+package diplom3.api.page;
 
 import com.codeborne.selenide.SelenideElement;
 import configuration.UrlConfig;
@@ -7,7 +7,7 @@ import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 
-public class PageHome {
+public class HomePage {
     public static final String BASE_URL = ConfigFactory.create(UrlConfig.class).baseUrl();
 
     //локатор кнопки "Личный Кабинет" вверх страницы
