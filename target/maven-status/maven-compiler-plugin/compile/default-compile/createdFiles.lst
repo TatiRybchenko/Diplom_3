@@ -1,0 +1,12 @@
+diplom3\api\User$UserBuilder.class
+diplom3\api\page\ProfileAccountPage.class
+diplom3\api\UserCredentials.class
+configuration\UrlConfig.class
+diplom3\api\UserClient.class
+diplom3\api\page\RegisterPage.class
+diplom3\api\StellarBurgerRestClient.class
+diplom3\api\page\HomeBurgerPage.class
+diplom3\api\page\RestorePage.class
+diplom3\api\User.class
+diplom3\api\EndPoints.class
+diplom3\api\page\LoginAccountPage.class
