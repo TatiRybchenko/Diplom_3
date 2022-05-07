@@ -6,7 +6,7 @@ import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.specification.RequestSpecification;
 import static io.restassured.http.ContentType.JSON;
-import static diplom3.api.page.HomePage.BASE_URL;
+import static diplom3.api.page.HomeBurgerPage.BASE_URL;
 
 public class StellarBurgerRestClient {
     protected static RequestSpecification getBaseSpec() {

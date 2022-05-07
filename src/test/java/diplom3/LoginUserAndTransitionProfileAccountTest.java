@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.Selenide.page;
 import static org.junit.Assert.assertTrue;
 
-public class LoginUserTest {
+public class LoginUserAndTransitionProfileAccountTest {
     private UserClient userClient;
     private User user;
 
@@ -23,6 +23,7 @@ public class LoginUserTest {
         userClient = new UserClient();
         user = User.getDataFaker();
         userClient.createUser(user);
+
     }
     @After
     public void tearDown(){
@@ -33,10 +34,10 @@ public class LoginUserTest {
 
     @Test
     @DisplayName("Вход по кнопке «Войти в аккаунт» на главной. Валидные параметры.")
-    @Description("Вход по кнопке «Войти в аккаунт» на главной. Корректные данные имя, почта и пароль, создаются рандомно. После проверки регистрации, данные о пользователе удаляются через запрос api")
+    @Description("Вход по кнопке «Войти в аккаунт» на главной. Переход в ЛК: проверка окна профиля в ЛК. Данные о пользователе создаются и удаляются через запрос api")
     public void correctLoginHomeFormAccountDownButton() {
 
-        HomePage pageHeader = open(HomePage.BASE_URL, HomePage.class);
+        HomeBurgerPage pageHeader = open(HomeBurgerPage.BASE_URL, HomeBurgerPage.class);
         pageHeader.clickLoginAccountDownButton();
 
         LoginAccountPage pageLoginPersonalAccount = page(LoginAccountPage.class);
@@ -46,17 +47,16 @@ public class LoginUserTest {
 
         pageHeader.clickPersonalAccountUpButton();
 
-        ProfileAccountPage profileAccountPager = page(ProfileAccountPage.class);
-        profileAccountPager.checkTextPageFormProfile();
-
-        assertTrue("Переход на страницу Профиля акаунта, не произошел, пользователь не залогинился", profileAccountPager.isWindowOrderIsProcessedDisplayed());
+        ProfileAccountPage profileAccountPage = page(ProfileAccountPage.class);
+        profileAccountPage.checkTextPageFormProfile();
+        assertTrue("Переход на страницу Профиля акаунта, не произошел, пользователь не залогинился", profileAccountPage.isTextLinkProfileDisplayed());
     }
     @Test
     @DisplayName("Вход через кнопку «Личный кабинет». Валидные параметры.")
-    @Description("Вход через кнопку «Личный кабинет». Корректные данные имя, почта и пароль, создаются рандомно. После проверки регистрации, данные о пользователе удаляются через запрос api")
+    @Description("Вход через кнопку «Личный кабинет». Переход в ЛК: проверка окна профиля в ЛК. Данные о пользователе создаются и удаляются через запрос api")
     public void correctLoginUserPersonalAccountFormEnterButton() {
 
-        HomePage pageHeader = open(HomePage.BASE_URL, HomePage.class);
+        HomeBurgerPage pageHeader = open(HomeBurgerPage.BASE_URL, HomeBurgerPage.class);
         pageHeader.clickPersonalAccountUpButton();
 
         LoginAccountPage pageLoginPersonalAccount = page(LoginAccountPage.class);
@@ -68,16 +68,15 @@ public class LoginUserTest {
 
         ProfileAccountPage profileAccountPager = page(ProfileAccountPage.class);
         profileAccountPager.checkTextPageFormProfile();
-
-        assertTrue("Переход на страницу Профиля акаунта, не произошел, пользователь не залогинился", profileAccountPager.isWindowOrderIsProcessedDisplayed());
+        assertTrue("Переход на страницу Профиля акаунта, не произошел, пользователь не залогинился", profileAccountPager.isTextLinkProfileDisplayed());
     }
 
     @Test
     @DisplayName("Вход через кнопку в форме регистрации. Валидные параметры.")
-    @Description("Вход через кнопку в форме регистрации. Корректные данные имя, почта и пароль, создаются рандомно. После проверки регистрации, данные о пользователе удаляются через запрос api")
+    @Description("Вход через кнопку в форме регистрации. Переход в ЛК: проверка окна профиля в ЛК. Данные о пользователе создаются и удаляются через запрос api")
     public void correctLoginUserRegisterFormEnterButton() {
 
-        HomePage pageHeader = open(HomePage.BASE_URL, HomePage.class);
+        HomeBurgerPage pageHeader = open(HomeBurgerPage.BASE_URL, HomeBurgerPage.class);
         pageHeader.clickPersonalAccountUpButton();
 
         LoginAccountPage pageLoginPersonalAccount = page(LoginAccountPage.class);
@@ -95,18 +94,17 @@ public class LoginUserTest {
 
         pageHeader.clickPersonalAccountUpButton();
 
-        ProfileAccountPage profileAccountPager = page(ProfileAccountPage.class);
-        profileAccountPager.checkTextPageFormProfile();
-
-        assertTrue("Переход на страницу Профиля акаунта, не произошел, пользователь не залогинился", profileAccountPager.isWindowOrderIsProcessedDisplayed());
+        ProfileAccountPage profileAccountPage = page(ProfileAccountPage.class);
+        profileAccountPage.checkTextPageFormProfile();
+        assertTrue("Переход на страницу Профиля акаунта, не произошел, пользователь не залогинился", profileAccountPage.isTextLinkProfileDisplayed());
     }
 
     @Test
     @DisplayName("Вход через кнопку в форме восстановления пароля. Валидные параметры.")
-    @Description("Вход через кнопку в форме восстановления пароля. Корректные данные имя, почта и пароль, создаются рандомно. После проверки регистрации, данные о пользователе удаляются через запрос api")
+    @Description("Вход через кнопку в форме восстановления пароля. Переход в ЛК: проверка окна профиля в ЛК. Данные о пользователе создаются и удаляются через запрос api")
     public void correctLoginUserRestoreFormEnterButton() {
 
-        HomePage pageHeader = open(HomePage.BASE_URL, HomePage.class);
+        HomeBurgerPage pageHeader = open(HomeBurgerPage.BASE_URL, HomeBurgerPage.class);
         pageHeader.clickPersonalAccountUpButton();
 
         LoginAccountPage pageLoginPersonalAccount = page(LoginAccountPage.class);
@@ -124,10 +122,9 @@ public class LoginUserTest {
 
         pageHeader.clickPersonalAccountUpButton();
 
-        ProfileAccountPage profileAccountPager = page(ProfileAccountPage.class);
-        profileAccountPager.checkTextPageFormProfile();
-
-        assertTrue("Переход на страницу Профиля акаунта, не произошел, пользователь не залогинился", profileAccountPager.isWindowOrderIsProcessedDisplayed());
+        ProfileAccountPage profileAccountPage = page(ProfileAccountPage.class);
+        profileAccountPage.checkTextPageFormProfile();
+        assertTrue("Переход на страницу Профиля акаунта, не произошел, пользователь не залогинился", profileAccountPage.isTextLinkProfileDisplayed());
     }
 
 }

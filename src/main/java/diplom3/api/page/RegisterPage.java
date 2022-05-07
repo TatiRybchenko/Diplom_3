@@ -76,4 +76,5 @@ public class RegisterPage {
     public void clickRegisterButton() {
         registerButton.click();
     }
+
 }

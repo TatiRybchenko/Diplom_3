@@ -47,14 +47,14 @@ public class LoginAccountPage {
         personalAccountRestorePasswordButton.click();
     }
     @Step("Проверяем, что выполнен переход на страницу Входа")
-    public boolean isWindowOrderIsProcessedDisplayed (){
+    public boolean isTextPageFormLoginDisplayed(){
         return nameTextPageFormLogin.isDisplayed();
     }
     @Step("Проверяем текст наименования страницы на форме Вход")
     public void checkTextPageFormLogin() {
         nameTextPageFormLogin.shouldHave(exactText("Вход"));
     }
-    @Step("Заполняем форму регистрации: имя {userName}, почта {userEmail}, пароль {userPassword}")
+    @Step("Заполняем форму логина: почта {userEmail}, пароль {userPassword}")
     public void fillFormLoginUser(String userEmail, String userPassword) {
         fillLineInputEmail(userEmail);
         fillLineInputPassword(userPassword);
