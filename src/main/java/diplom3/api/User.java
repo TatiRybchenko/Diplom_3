@@ -10,7 +10,6 @@ import java.util.Locale;
 @Data
 @Builder
 public class User {
-
         private String email;
         private String password;
         private String name;

@@ -2,10 +2,8 @@ package diplom3.api;
 
 import io.qameta.allure.Step;
 import io.restassured.response.ValidatableResponse;
-
 import java.util.HashMap;
 import java.util.Map;
-
 import static diplom3.api.EndPoints.USER_CREATE;
 import static diplom3.api.StellarBurgerRestClient.getBaseSpec;
 import static io.restassured.RestAssured.given;
